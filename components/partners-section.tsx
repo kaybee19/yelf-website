@@ -12,7 +12,7 @@ export default function PartnersSection() {
     },
     { 
       name: "Partner 3", 
-      logo: "/images/partners/partner-3.jpg" 
+      logo: "/images/partners/partner-3.png" 
     },
     { 
       name: "Partner 4", 
@@ -20,7 +20,7 @@ export default function PartnersSection() {
     },
     {
       name: "Partner 5",
-      logo: "/images/partners/partner-5.png",
+      logo: "/images/partners/partner-5.jpg",
     },
     {
       name: "Partner 6",

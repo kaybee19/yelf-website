@@ -33,7 +33,7 @@ const team = [
     name: "Abdelrahman Habashneh",
     role: "Programme Director",
     bio: "Abdelrahman leads our research programs and policy development initiatives. He has extensive experience in climate research, data analysis, and evidence-based policy recommendations.",
-    image: "/placeholder.svg?height=400&width=400",
+    image: "/images/team/abdelr.png",
     linkedin: "#",
     twitter: "#",
     email: "abdelrahman.habashneh@yelfclimatetrustfoundation.org",

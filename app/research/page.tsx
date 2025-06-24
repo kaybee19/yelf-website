@@ -144,6 +144,24 @@ export default function ResearchPage() {
               YELF Climate Trust Foundation seeks to support Federal government policies with robust quantitative and
               qualitative analysis for an improved understanding of Nigeria's low-carbon transition pathways.
             </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                className="bg-white text-yellow-600 hover:bg-yellow-50 font-semibold" 
+                asChild
+              >
+                <a 
+                  href="/YELF - SPIS Research.pdf" 
+                  download="YELF - SPIS Research.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download SPIS Research Report
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

@@ -36,18 +36,14 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 relative">
+              <div className="w-48 h-28 relative">
                 <Image
-                  src="/yelf-logo.png"
+                  src="/yelf-logo2.png"
                   alt="YELF Climate Trust Foundation"
-                  width={48}
-                  height={48}
+                  width={192}
+                  height={192}
                   className="object-contain"
                 />
-              </div>
-              <div>
-                <div className="font-bold text-xl text-white">YCTF</div>
-                <div className="text-sm text-gray-400">Climate Trust Foundation</div>
               </div>
             </Link>
 

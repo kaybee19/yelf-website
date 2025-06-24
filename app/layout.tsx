@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
-        <link rel="icon" href="/yelf-logo.ico" sizes="any" />
+        <link rel="icon" href="/yelf-logo-ico.png" sizes="any" />
         <link rel="icon" href="/yelf-logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/yelf-logo.png" />
         <link rel="manifest" href="/manifest.json" />
