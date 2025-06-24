@@ -69,6 +69,7 @@ export default function ContactPage() {
     setSubmitStatus("idle")
 
     try {
+      // Use Netlify's form submission endpoint
       const response = await fetch("/", {
         method: "POST",
         headers: {
@@ -76,8 +77,10 @@ export default function ContactPage() {
         },
         body: new URLSearchParams({
           "form-name": "contact",
-          ...formData,
-        }),
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }).toString(),
       })
 
       if (response.ok) {

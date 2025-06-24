@@ -28,6 +28,7 @@ export default function NewsPage() {
     setIsSubmitting(true)
 
     try {
+      // Use Netlify's form submission endpoint
       const response = await fetch("/", {
         method: "POST",
         headers: {
@@ -36,7 +37,7 @@ export default function NewsPage() {
         body: new URLSearchParams({
           "form-name": "newsletter",
           email: email,
-        }),
+        }).toString(),
       })
 
       if (response.ok) {
@@ -241,12 +242,12 @@ export default function NewsPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  className="flex-1 px-4 py-3 max-h-10 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className={`bg-white text-yellow-600 hover:bg-yellow-50 px-8 py-3 ${
+                  className={`bg-white text-yellow-600 hover:bg-yellow-50 px-8 py-3 max-h-10 ${
                     isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                 >
