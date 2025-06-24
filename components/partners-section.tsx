@@ -3,19 +3,28 @@ import { Button } from "@/components/ui/button";
 export default function PartnersSection() {
   const partners = [
     {
-      name: "African Development Bank",
-      logo: "/placeholder.svg?height=80&width=200",
+      name: "Partner 1",
+      logo: "/images/partners/partner-1.webp",
     },
-    { name: "ECOWAS", logo: "/placeholder.svg?height=80&width=200" },
-    { name: "African Union", logo: "/placeholder.svg?height=80&width=200" },
-    { name: "UNFCCC", logo: "/placeholder.svg?height=80&width=200" },
-    {
-      name: "Islamic Development Bank",
-      logo: "/placeholder.svg?height=80&width=200",
+    { 
+      name: "Partner 2", 
+      logo: "/images/partners/partner-2.png" 
+    },
+    { 
+      name: "Partner 3", 
+      logo: "/images/partners/partner-3.jpg" 
+    },
+    { 
+      name: "Partner 4", 
+      logo: "/images/partners/partner-4.webp" 
     },
     {
-      name: "Nigeria National Assembly",
-      logo: "/placeholder.svg?height=80&width=200",
+      name: "Partner 5",
+      logo: "/images/partners/partner-5.png",
+    },
+    {
+      name: "Partner 6",
+      logo: "/images/partners/partner-6.jpg",
     },
   ];
 
@@ -33,17 +42,20 @@ export default function PartnersSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60 hover:opacity-100 transition-opacity duration-300">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300"
+              className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 group"
             >
-              <img
-                src={partner.logo || "/placeholder.svg"}
-                alt={partner.name}
-                className="max-h-12 w-auto"
-              />
+              <div className="h-16 w-full flex items-center justify-center">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="max-w-full w-auto h-auto object-contain"
+                  style={{ height: '64px' }}
+                />
+              </div>
             </div>
           ))}
         </div>

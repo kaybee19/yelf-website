@@ -1,19 +1,57 @@
-import type { Metadata } from "next"
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar, ArrowRight, User } from "lucide-react"
-import { generateMetadata } from "@/lib/seo"
 import { StructuredData, structuredDataSchemas } from "@/components/seo/structured-data"
 import Link from "next/link"
-
-export const metadata: Metadata = generateMetadata({
-  title: "Climate News & Insights from Nigeria and Africa",
-  description:
-    "Stay updated with the latest climate action news, policy insights, and research findings from YELF Climate Trust Foundation covering Nigeria and Africa's climate transition.",
-  url: "/news",
-})
+import { useState } from "react"
 
 export default function NewsPage() {
+  const [email, setEmail] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    // Basic validation
+    if (!email.trim()) {
+      alert("Please enter your email address")
+      return
+    }
+
+    if (!email.includes("@")) {
+      alert("Please enter a valid email address")
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          "form-name": "newsletter",
+          email: email,
+        }),
+      })
+
+      if (response.ok) {
+        setEmail("")
+        alert("Thank you for subscribing to our newsletter!")
+      } else {
+        alert("There was an error subscribing. Please try again.")
+      }
+    } catch (error) {
+      alert("There was an error subscribing. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   const articles = [
     {
       id: 1,
@@ -185,6 +223,7 @@ export default function NewsPage() {
                 method="POST" 
                 data-netlify="true"
                 netlify-honeypot="bot-field"
+                onSubmit={handleNewsletterSubmit}
                 className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
               >
                 {/* Netlify hidden inputs */}
@@ -198,12 +237,20 @@ export default function NewsPage() {
                 <input
                   type="email"
                   name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="Enter your email address"
                   className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
-                <Button type="submit" className="bg-white text-yellow-600 hover:bg-yellow-50 px-8 py-3">
-                  Subscribe
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className={`bg-white text-yellow-600 hover:bg-yellow-50 px-8 py-3 ${
+                    isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                >
+                  {isSubmitting ? "Subscribing..." : "Subscribe"}
                 </Button>
               </form>
               <p className="text-yellow-200 text-sm mt-4">Join 5,000+ climate leaders and policymakers</p>

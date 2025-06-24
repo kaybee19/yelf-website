@@ -23,7 +23,7 @@ const team = [
   {
     name: "Yasir Musa",
     role: "Co-Founder & Chief Operations Officer",
-    bio: "Yasir specializes in energy systems and industrial decarbonization. His expertise spans renewable energy integration, grid modernization, and sustainable industrial transformation.",
+    bio: "Yasir specializes in energy systems, industrial decarbonization, and sustainable agriculture. His expertise spans renewable energy integration, grid modernization, sustainable industrial transformation, and climate-smart agricultural practices.",
     image: "/images/team/yasir.jpeg",
     linkedin: "#",
     twitter: "#",
