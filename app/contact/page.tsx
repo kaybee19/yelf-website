@@ -1,7 +1,6 @@
 "use client"
 
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline"
-import { useState } from "react"
 
 const contactInfo = [
   {
@@ -26,79 +25,15 @@ const contactInfo = [
     id: 3,
     icon: <EnvelopeIcon className="h-6 w-6" />,
     title: "Email",
-    content: "farooq@yelfclimatetrustfoundation.org",
+    content: "info@yelfclimatetrustfoundation.org",
     color: "purple",
-    href: "mailto:farooq@yelfclimatetrustfoundation.org",
+    href: "mailto:info@yelfclimatetrustfoundation.org",
     target: "_blank",
     rel: "noopener noreferrer",
   },
 ]
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    // Basic validation
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      alert("Please fill in all fields")
-      return
-    }
-
-    if (!formData.email.includes("@")) {
-      alert("Please enter a valid email address")
-      return
-    }
-
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
-
-    try {
-      // Use Netlify's form submission endpoint
-      const response = await fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          "form-name": "contact",
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }).toString(),
-      })
-
-      if (response.ok) {
-        setSubmitStatus("success")
-        setFormData({ name: "", email: "", message: "" })
-        alert("Thank you! Your message has been sent successfully.")
-      } else {
-        setSubmitStatus("error")
-        alert("There was an error sending your message. Please try again.")
-      }
-    } catch (error) {
-      setSubmitStatus("error")
-      alert("There was an error sending your message. Please try again.")
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   return (
     <div className="container mx-auto py-12">
       <h1 className="text-3xl font-bold mb-8 text-center">Contact Us</h1>
@@ -126,17 +61,10 @@ export default function ContactPage() {
           name="contact" 
           method="POST" 
           data-netlify="true"
-          netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
+          action="/success"
           className="max-w-lg mx-auto"
         >
-          {/* Netlify hidden inputs */}
           <input type="hidden" name="form-name" value="contact" />
-          <p className="hidden">
-            <label>
-              Don't fill this out if you're human: <input name="bot-field" />
-            </label>
-          </p>
           
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
@@ -146,8 +74,6 @@ export default function ContactPage() {
               type="text"
               id="name"
               name="name"
-              value={formData.name}
-              onChange={handleInputChange}
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Your Name"
@@ -161,8 +87,6 @@ export default function ContactPage() {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleInputChange}
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Your Email"
@@ -175,8 +99,6 @@ export default function ContactPage() {
             <textarea
               id="message"
               name="message"
-              value={formData.message}
-              onChange={handleInputChange}
               required
               rows={5}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -185,15 +107,10 @@ export default function ContactPage() {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className={`font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
-                isSubmitting 
-                  ? "bg-gray-400 cursor-not-allowed" 
-                  : "bg-primary-500 hover:bg-primary-700"
-              } text-white`}
+              className="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
-              disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              Send Message
             </button>
           </div>
         </form>

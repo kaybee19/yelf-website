@@ -5,54 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Calendar, ArrowRight, User } from "lucide-react"
 import { StructuredData, structuredDataSchemas } from "@/components/seo/structured-data"
 import Link from "next/link"
-import { useState } from "react"
 
 export default function NewsPage() {
-  const [email, setEmail] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    // Basic validation
-    if (!email.trim()) {
-      alert("Please enter your email address")
-      return
-    }
-
-    if (!email.includes("@")) {
-      alert("Please enter a valid email address")
-      return
-    }
-
-    setIsSubmitting(true)
-
-    try {
-      // Use Netlify's form submission endpoint
-      const response = await fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          "form-name": "newsletter",
-          email: email,
-        }).toString(),
-      })
-
-      if (response.ok) {
-        setEmail("")
-        alert("Thank you for subscribing to our newsletter!")
-      } else {
-        alert("There was an error subscribing. Please try again.")
-      }
-    } catch (error) {
-      alert("There was an error subscribing. Please try again.")
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   const articles = [
     {
       id: 1,
@@ -223,35 +177,23 @@ export default function NewsPage() {
                 name="newsletter" 
                 method="POST" 
                 data-netlify="true"
-                netlify-honeypot="bot-field"
-                onSubmit={handleNewsletterSubmit}
+                action="/success"
                 className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
               >
-                {/* Netlify hidden inputs */}
                 <input type="hidden" name="form-name" value="newsletter" />
-                <p className="hidden">
-                  <label>
-                    Don't fill this out if you're human: <input name="bot-field" />
-                  </label>
-                </p>
                 
                 <input
                   type="email"
                   name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="Enter your email address"
                   className="flex-1 px-4 py-3 max-h-10 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
                 <Button 
                   type="submit" 
-                  disabled={isSubmitting}
-                  className={`bg-white text-yellow-600 hover:bg-yellow-50 px-8 py-3 max-h-10 ${
-                    isSubmitting ? "opacity-50 cursor-not-allowed" : ""
-                  }`}
+                  className="bg-white text-yellow-600 hover:bg-yellow-50 px-8 py-3 max-h-10"
                 >
-                  {isSubmitting ? "Subscribing..." : "Subscribe"}
+                  Subscribe
                 </Button>
               </form>
               <p className="text-yellow-200 text-sm mt-4">Join 5,000+ climate leaders and policymakers</p>

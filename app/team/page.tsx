@@ -18,7 +18,7 @@ const team = [
     image: "/images/team/farooq.jpeg",
     linkedin: "#",
     twitter: "#",
-    email: "bello.farooq@yelfclimatetrustfoundation.org",
+    email: "bello.info@yelfclimatetrustfoundation.org",
   },
   {
     name: "Yasir Musa",

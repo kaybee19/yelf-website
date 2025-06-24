@@ -75,13 +75,13 @@ export default function Footer() {
                 +234 706 196 1066
               </a>
               <a 
-                href="mailto:farooq@yelfclimatetrustfoundation.org"
+                href="mailto:info@yelfclimatetrustfoundation.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-300 hover:text-primary-400 transition-colors"
               >
                 <Mail className="h-5 w-5 mr-3 text-primary-400" />
-                farooq@yelfclimatetrustfoundation.org
+                info@yelfclimatetrustfoundation.org
               </a>
             </div>
           </div>

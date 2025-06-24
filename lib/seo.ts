@@ -128,7 +128,7 @@ export const jsonLd = {
       "@type": "ContactPoint",
       telephone: "+234-706-196-1066",
       contactType: "customer service",
-      email: "bello.farooq@yelfclimatetrustfoundation.org",
+      email: "bello.info@yelfclimatetrustfoundation.org",
     },
     sameAs: [siteConfig.links.twitter, siteConfig.links.linkedin, siteConfig.links.facebook],
     areaServed: ["Nigeria", "Africa"],

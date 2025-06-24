@@ -5,21 +5,19 @@
 </head>
 <body>
   <!-- Contact Form -->
-  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <form name="contact" method="POST" data-netlify="true" action="/success">
     <input type="hidden" name="form-name" value="contact" />
-    <p class="hidden">
-      <label>
-        Don't fill this out if you're human: <input name="bot-field" />
-      </label>
+    <p>
+      <label htmlFor="name">Name:</label><br />
+      <input type="text" name="name" id="name" required />
     </p>
     <p>
-      <label>Name: <input type="text" name="name" required /></label>
+      <label htmlFor="email">Email:</label><br />
+      <input type="email" name="email" id="email" required />
     </p>
     <p>
-      <label>Email: <input type="email" name="email" required /></label>
-    </p>
-    <p>
-      <label>Message: <textarea name="message" required></textarea></label>
+      <label htmlFor="message">Message:</label><br />
+      <textarea name="message" id="message" required></textarea>
     </p>
     <p>
       <button type="submit">Send Message</button>
@@ -27,15 +25,11 @@
   </form>
 
   <!-- Newsletter Form -->
-  <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <form name="newsletter" method="POST" data-netlify="true" action="/success">
     <input type="hidden" name="form-name" value="newsletter" />
-    <p class="hidden">
-      <label>
-        Don't fill this out if you're human: <input name="bot-field" />
-      </label>
-    </p>
     <p>
-      <label>Email: <input type="email" name="email" required /></label>
+      <label htmlFor="email">Email:</label><br />
+      <input type="email" name="email" id="email" required />
     </p>
     <p>
       <button type="submit">Subscribe</button>
