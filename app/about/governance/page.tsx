@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const GovernancePage = () => {
   return (
-    <div className="container mx-auto py-12">
+    <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold mb-6">Governance</h1>
 
       <section className="mb-8">

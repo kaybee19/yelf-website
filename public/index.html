@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Netlify Forms Detection</title>
+</head>
+<body>
+  <!-- Contact Form -->
+  <form name="contact" method="POST" data-netlify="true" action="/success">
+    <input type="hidden" name="form-name" value="contact" />
+    <p>
+      <label htmlFor="name">Name:</label><br />
+      <input type="text" name="name" id="name" required />
+    </p>
+    <p>
+      <label htmlFor="email">Email:</label><br />
+      <input type="email" name="email" id="email" required />
+    </p>
+    <p>
+      <label htmlFor="message">Message:</label><br />
+      <textarea name="message" id="message" required></textarea>
+    </p>
+    <p>
+      <button type="submit">Send Message</button>
+    </p>
+  </form>
+
+  <!-- Newsletter Form -->
+  <form name="newsletter" method="POST" data-netlify="true" action="/success">
+    <input type="hidden" name="form-name" value="newsletter" />
+    <p>
+      <label htmlFor="newsletter-email">Email:</label><br />
+      <input type="email" name="email" id="newsletter-email" required />
+    </p>
+    <p>
+      <button type="submit">Subscribe</button>
+    </p>
+  </form>
+</body>
+</html> 

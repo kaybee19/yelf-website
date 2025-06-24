@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next/server"
+export const dynamic = "force-static"
 
 const routes = [
   "",
@@ -19,7 +19,7 @@ const routes = [
   "/news",
 ]
 
-export default function sitemap(): MetadataRoute["sitemap"] {
+export default function sitemap() {
   return routes.map((route) => ({
     url: `https://www.yourdomain.com${route}`,
     lastmod: new Date(),
