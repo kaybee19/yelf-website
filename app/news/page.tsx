@@ -180,14 +180,32 @@ export default function NewsPage() {
                 Subscribe to our newsletter for weekly climate insights, policy updates, and research findings delivered
                 directly to your inbox.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <form 
+                name="newsletter" 
+                method="POST" 
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+              >
+                {/* Netlify hidden inputs */}
+                <input type="hidden" name="form-name" value="newsletter" />
+                <p className="hidden">
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </p>
+                
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="Enter your email address"
                   className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
-                <Button className="bg-white text-yellow-600 hover:bg-yellow-50 px-8 py-3">Subscribe</Button>
-              </div>
+                <Button type="submit" className="bg-white text-yellow-600 hover:bg-yellow-50 px-8 py-3">
+                  Subscribe
+                </Button>
+              </form>
               <p className="text-yellow-200 text-sm mt-4">Join 5,000+ climate leaders and policymakers</p>
             </div>
           </div>

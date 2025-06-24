@@ -132,7 +132,7 @@ export default function PowerMarketsResearchPage() {
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 mt-16">
                 {keyObjectives.map((objective, index) => (
                   <div key={index} className="flex items-start">
                     <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center mt-1 mr-4 flex-shrink-0">

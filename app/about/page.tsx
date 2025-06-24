@@ -36,8 +36,8 @@ export default function AboutPage() {
 
             <div className="relative">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/full-shot-peasant-woman-working-outdoors_23-2149894725-N36lV6XvdsQhIPFNClk0BpTUnPE6ti.avif"
-                alt="Woman working in sustainable agriculture"
+                src="/images/about-plants.jpg"
+                alt="sustainable agriculture"
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>

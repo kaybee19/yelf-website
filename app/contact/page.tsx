@@ -55,7 +55,21 @@ export default function ContactPage() {
       </div>
       <div className="mt-12">
         <h2 className="text-2xl font-semibold mb-4 text-center">Send us a message</h2>
-        <form className="max-w-lg mx-auto">
+        <form 
+          name="contact" 
+          method="POST" 
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          className="max-w-lg mx-auto"
+        >
+          {/* Netlify hidden inputs */}
+          <input type="hidden" name="form-name" value="contact" />
+          <p className="hidden">
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
+          
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
               Name
@@ -63,6 +77,8 @@ export default function ContactPage() {
             <input
               type="text"
               id="name"
+              name="name"
+              required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Your Name"
             />
@@ -74,6 +90,8 @@ export default function ContactPage() {
             <input
               type="email"
               id="email"
+              name="email"
+              required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Your Email"
             />
@@ -84,6 +102,8 @@ export default function ContactPage() {
             </label>
             <textarea
               id="message"
+              name="message"
+              required
               rows={5}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Your Message"
@@ -94,7 +114,7 @@ export default function ContactPage() {
               className="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              Send
+              Send Message
             </button>
           </div>
         </form>
