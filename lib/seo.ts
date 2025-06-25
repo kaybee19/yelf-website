@@ -119,9 +119,9 @@ export const jsonLd = {
     foundingDate: "2024",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Suite 5 Maidabino Plaza",
-      addressLocality: "Wuse Zone 5",
-      addressRegion: "FCT",
+      streetAddress: "S9 Cairo Street",
+      addressLocality: "Wuse 2",
+      addressRegion: "Abuja",
       addressCountry: "Nigeria",
     },
     contactPoint: {

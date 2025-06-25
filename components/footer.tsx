@@ -55,13 +55,13 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a 
-                href="https://maps.google.com/?q=Suite+5+Maidabino+Plaza,+Wuse+Zone+5,+Abuja"
+                href="https://maps.google.com/?q=9+Cairo+Street+Wuse+2+Abuja"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-300 hover:text-primary-400 transition-colors"
               >
                 <MapPin className="h-5 w-5 mr-3 text-primary-400" />
-                Suite 5 Maidabino Plaza, Wuse Zone 5, Abuja
+                9 Cairo Street Wuse 2 Abuja
               </a>
               <a 
                 href="tel:+2347061961066"
