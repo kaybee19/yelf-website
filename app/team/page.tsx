@@ -12,15 +12,6 @@ const team = [
     email: "ethel.okosuns@yelfclimatetrustfoundation.org",
   },
   {
-    name: "Farooq Bello",
-    role: "Co-Founder & Secretary",
-    bio: "Farooq is a climate finance expert with deep knowledge of international climate mechanisms and policy frameworks. He has worked extensively on climate diplomacy and international cooperation.",
-    image: "/images/team/farooq.jpeg",
-    linkedin: "#",
-    twitter: "#",
-    email: "bello.info@yelfclimatetrustfoundation.org",
-  },
-  {
     name: "Yasir Musa",
     role: "Co-Founder & Chief Operations Officer",
     bio: "Yasir specializes in energy systems, industrial decarbonization, and sustainable agriculture. His expertise spans renewable energy integration, grid modernization, sustainable industrial transformation, and climate-smart agricultural practices.",
