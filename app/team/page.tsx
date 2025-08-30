@@ -37,7 +37,7 @@ const team = [
     linkedin: "#",
     twitter: "#",
     email: "abdelrahman.habashneh@yelfclimatetrustfoundation.org",
-  }
+  },
   {
     name: "Maryam Yabo",
     role: "Research & Education Lead",
