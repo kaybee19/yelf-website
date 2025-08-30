@@ -21,6 +21,15 @@ const team = [
     email: "yasir.musa@yelfclimatetrustfoundation.org",
   },
   {
+    name: "Farooq Bello",
+    role: "Co-Founder & Secretary",
+    bio: "Farooq is a climate finance expert with deep knowledge of international climate mechanisms and policy frameworks. He has worked extensively on climate diplomacy and international cooperation.",
+    image: "/images/team/farooq.jpeg",
+    linkedin: "#",
+    twitter: "#",
+    email: "bello.info@yelfclimatetrustfoundation.org",
+  },
+  {
     name: "Abdelrahman Habashneh",
     role: "Programme Director",
     bio: "Abdelrahman leads our research programs and policy development initiatives. He has extensive experience in climate research, data analysis, and evidence-based policy recommendations.",
