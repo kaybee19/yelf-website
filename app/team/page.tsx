@@ -41,7 +41,7 @@ const team = [
   {
     name: "Maryam Yabo",
     role: "Research & Education Lead",
-    bio: "Maryam is a PhD researcher in Law at Trinity College Dublin, focusing on climate justice and the renewable energy transition. She has taught across Irish institutions, co-designed Trinity’s Education for Sustainable Development module (earning the 2025 Sustainability Leadership Award), and delivered workshops on sustainability and global citizenship. She brings together research, teaching, and community work to advance inclusive and equitable climate action.",
+    bio: "Maryam is a PhD researcher in Law at Trinity College Dublin, focusing on climate justice and the renewable energy transition. She has earned the 2025 Sustainability Leadership Award, and delivered workshops on sustainability and global citizenship.",
     image: "/images/team/maryam.jpeg",
     linkedin: "#",
     twitter: "#",
